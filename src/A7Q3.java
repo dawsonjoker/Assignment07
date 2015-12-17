@@ -25,13 +25,18 @@ public class A7Q3 {
             nums[i] = input.nextInt();
         }
         //Place integers in ascending order
-        while (true) {
-            if (nums[0] > nums[1]) {
-                System.out.println(nums[1] + " " + nums[0]);
-                break;
-            } else {
-                System.out.println(nums[0] + " " + nums[1]);
-                break;
+        for (int x = 0; x < nums.length - 1; x++) {
+            for (int y = x + 1; y < nums.length; y++) {
+                if (nums[x] > nums[y]) {
+                    int temp = nums[x];
+                    nums[x] = nums[y];
+                    nums[y] = temp;
+                }
+            }
+            //Output to user
+            System.out.println("");
+            for (int i = 0; i < nums.length; i++) {
+                System.out.println(nums[i]);
             }
         }
     }
